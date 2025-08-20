@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PreviAluno</title>
+    <link rel="icon" href="../static/images/favicon.ico" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>PreviAluno</h1>
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <h1>Upload de Arquivo CSV</h1>
+            
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div>
+                        <h3>📁 Clique aqui para selecionar um arquivo CSV</h3>
+                        <p>ou arraste e solte o arquivo aqui</p>
+                        <input type="file" id="fileInput" name="file" accept=".csv">
+                    </div>
+                </div>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Enviando arquivo...</p>
+            </div>
+
+            <div class="message" id="message"></div>
+            
+            <div class="file-info" id="fileInfo"></div>
+        </div>
+
+
+        <div class="result-container">
+            <div class="tabela-container">
+                <h2>Resultados da Predição</h2>
+                <div class="tabela-scroll">
+                    <table class="tabela-alunos" id="tabelaAlunos">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Predição</th>
+                                <th>Probabilidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Linhas serão inseridas via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="grafico-pizza-box">
+                    <canvas id="graficoEvasao"></canvas>
+                </div>
+                <div class="grafico-legenda">
+                    <h3>Interpretação do Gráfico</h3>
+                    <p>
+                        Este gráfico de pizza mostra a quantidade de alunos com
+                        <strong>80% ou mais de chance de evasão</strong> em vermelho, 
+                        comparado aos alunos com 
+                        <strong>menos de 80% de chance</strong> em verde.
+                    </p>
+                    <p>
+                        Dessa forma, é possível visualizar rapidamente o grupo de 
+                        estudantes em situação de maior risco.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="variables-container">
+            <h2>Importância das variáveis</h2>
+            <div class="grafico-container">
+                <div class="grafico-legenda">
+                    <h3>Top 5 Variáveis Mais Importantes</h3>
+                    <ul>
+                        <li><strong>Approval rate</strong> — Taxa de aprovação geral dos alunos.</li>
+                        <li><strong>Curricular units 2nd sem (approved)</strong> — Disciplinas aprovadas no 2º semestre.</li>
+                        <li><strong>Total approved</strong> — Total de disciplinas aprovadas.</li>
+                        <li><strong>Tuition fees up to date</strong> — Situação das mensalidades (em dia ou não).</li>
+                        <li><strong>Curricular units 2nd sem (enrolled)</strong> — Disciplinas matriculadas no 2º semestre.</li>
+                    </ul>
+                </div>
+                <div class="grafico-box">
+                    <canvas id="graficoTop5"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 PreviAluno. Todos os direitos reservados.</p>
+            <p class="developer-info">Desenvolvido por <a href="https://github.com/mericxy" target="_blank" rel="noopener noreferrer">mericxy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
