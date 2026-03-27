@@ -2,14 +2,13 @@
 
 ---
 
+**PreviAluno** é uma aplicação web que utiliza Machine Learning para prever a probabilidade de evasão ou reprovação de alunos com base em dados acadêmicos e socioeconômicos. A ferramenta permite o upload de conjuntos de dados em formato CSV, processa as informações através de um modelo de ensemble e apresenta os resultados de forma visual e intuitiva por meio de dashboards.
+
 <p align="center">
   <!-- Espaço para imagem da aplicação -->
   <img src="./static/images/aplicacao.png" alt="Preview da Aplicação">
 </p>
 
----
-
-**PreviAluno** é uma aplicação web que utiliza Machine Learning para prever a probabilidade de evasão ou reprovação de alunos com base em dados acadêmicos e socioeconômicos. A ferramenta permite o upload de conjuntos de dados em formato CSV, processa as informações através de um modelo de ensemble e apresenta os resultados de forma visual e intuitiva por meio de dashboards.
 
 ---
 
